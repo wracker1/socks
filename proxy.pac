@@ -3,7 +3,7 @@ function FindProxyForURL(url, host) {
     if (isInNet(host, "172.18.243.0", "255.255.255.0") || isInNet(host, "172.27.243.0", "255.255.255.0")) {
         // routing STG
         return "SOCKS localhost:8888; DIRECT";
-    } else if (isInNet(host, "172.0.0.0", "255.0.0.0") || isInNet(host, "10.0.0.0", "255.0.0.0") || dnsDomainIs(host, ".office365.com")) {
+    } else if (isInNet(host, "172.0.0.0", "255.0.0.0") || isInNet(host, "10.0.0.0", "255.0.0.0") || dnsDomainIs(host, ".office365.com") || dnsDomainIs(host, ".microsoftonline.com") || dnsDomainIs(host, ".sktelecom.com")) {
         // routing PRD
         return "SOCKS localhost:7777; DIRECT";
     } else {
